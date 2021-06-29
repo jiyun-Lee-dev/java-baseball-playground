@@ -39,7 +39,7 @@ public class StringCalculatorTest {
     @ParameterizedTest
     @CsvSource(value = {"1 + 2 * 3:true", "1 @*:false", "!2 * 3:false"}, delimiter = ':')
     //@DisplayName(value = "기호만 있거나, 특수문자가 들어갔을 경우 false 반환하는지 확인")
-    void checkInputValuable(String input, boolean expected) {
+    void validateInput(String input, boolean expected) {
         assertThat(calculator.isRightExpression(input)).isEqualTo(expected);
     }
 
