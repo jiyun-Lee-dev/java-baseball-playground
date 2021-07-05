@@ -13,7 +13,7 @@ public class PlayResult {
         return this.ball;
     }
 
-    public int geStrike() {
+    public int getStrike() {
         return this.strike;
     }
 
@@ -29,4 +29,9 @@ public class PlayResult {
     public boolean isStrikeOut() {
         return this.strike == 3;
     }
+
+    public boolean isNothing() {
+        return this.ball == 0 && this.strike == 0;
+    }
+
 }

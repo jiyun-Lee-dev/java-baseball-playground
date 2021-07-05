@@ -2,8 +2,6 @@ package baseball;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.Arrays;
 
@@ -33,9 +31,9 @@ public class ValidationNumbersTest {
 
     @Test
     void 중복된_숫자가_있는지_확인() {
-        assertThat(validationNumbers.validateZero(Arrays.asList(1, 2, 3))).isTrue();
-        assertThat(validationNumbers.validateZero(Arrays.asList(4, 5, 6))).isTrue();
-        assertThat(validationNumbers.validateZero(Arrays.asList(1, 1, 2))).isFalse();
-        assertThat(validationNumbers.validateZero(Arrays.asList(4, 4, 4))).isFalse();
+        assertThat(validationNumbers.validateDuplicate(Arrays.asList(1, 2, 3))).isTrue();
+        assertThat(validationNumbers.validateDuplicate(Arrays.asList(4, 5, 6))).isTrue();
+        assertThat(validationNumbers.validateDuplicate(Arrays.asList(1, 1, 2))).isFalse();
+        assertThat(validationNumbers.validateDuplicate(Arrays.asList(4, 4, 4))).isFalse();
     }
 }

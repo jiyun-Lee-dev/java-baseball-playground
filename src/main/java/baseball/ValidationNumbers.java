@@ -13,10 +13,21 @@ public class ValidationNumbers {
         return (ballNumber > 0 && ballNumber < 10);
     }
 
-    public boolean validateZero(List<Integer> ballNumbers) {
+    public boolean validateDuplicate(List<Integer> ballNumbers) {
         List<Integer> distinctNumbers =  ballNumbers.stream()
                                                     .distinct()
                                                     .collect(Collectors.toList());
         return ballNumbers.size() == distinctNumbers.size();
+    }
+
+    private boolean validateNumbers(List<Integer> ballNumbers) {
+        boolean fail = ballNumbers.stream()
+                        .anyMatch(ballNumber -> ballNumber <= 0 || ballNumber >= 10);
+        if (fail) return false;
+        return true;
+    }
+
+    public boolean validate(List<Integer> splitNumbers) {
+        return validateDuplicate(splitNumbers) && validateLength(splitNumbers.size()) && validateNumbers(splitNumbers);
     }
 }
