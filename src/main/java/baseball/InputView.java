@@ -14,6 +14,7 @@ public class InputView {
             System.out.print("숫자를 입력해주세요: ");
             inputNumbers = scanner.nextInt();
         } while (!validationNumbers.validate(splitNumbers(inputNumbers)));
+
         return splitNumbers(inputNumbers);
     }
 

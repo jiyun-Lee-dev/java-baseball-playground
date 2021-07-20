@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// 클래스 이름과 메소드 이름이 혼동됨. 너무 비슷함.
 public class ValidationNumbers {
     public boolean validateLength(int length) {
         return length == 3;
@@ -22,7 +23,8 @@ public class ValidationNumbers {
 
     private boolean validateNumbers(List<Integer> ballNumbers) {
         boolean fail = ballNumbers.stream()
-                        .anyMatch(ballNumber -> ballNumber <= 0 || ballNumber >= 10);
+                            .anyMatch(ballNumber -> !validateNumber(ballNumber));
+        //                .anyMatch(ballNumber -> ballNumber <= 0 || ballNumber >= 10);
         if (fail) return false;
         return true;
     }
